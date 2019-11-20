@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jixunkeji.mapper.ShareMemberMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.jixunkeji.entity.ShareMember">
+        <id column="id" property="id" />
+        <result column="email" property="email" />
+        <result column="nick_name" property="nickName" />
+        <result column="member_id" property="memberId" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, email, nick_name, member_id
+    </sql>
+
+</mapper>

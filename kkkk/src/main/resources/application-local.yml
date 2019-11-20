@@ -1,0 +1,61 @@
+server:
+  port: 9702
+
+#swagger:
+##  production: true
+#  enable: true
+#    basic:
+#      enable: true #是否开启权限验证
+#      username: admin #账号
+#      password: 123456 #密码
+
+#spring
+spring:
+  profiles:
+    active: local
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
+    date-format: yyyy-MM-dd HH:mm:ss
+  resources:
+      static-locations: file:///D:/chongdianxian
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://47.106.166.23:3306/lock?allowMultiQueries=true&useUnicode=true&characterEncoding=utf8&autoReconnect=true&serverTimezone=UTC
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 15
+      auto-commit: true
+      idle-timeout: 30000
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+
+  redis:
+    database: 0
+    host: 127.0.0.1
+    # Redis服务器连接端口
+    port: 6379
+    # Redis服务器连接密码（默认为空）
+#    password: 12341234
+    jedis:
+      pool:
+        # 连接池最大连接数（使用负值表示没有限制）
+        max-active: 100
+        # 连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-wait: 3000
+        # 连接池中的最大/小空闲连接
+        max-idle: 8
+        min-idle: 5
+    # 连接超时时间（毫秒）
+    timeout: 3000
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*Mapper.xml
+  type-aliases-package: com.jixunkeji.entity
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+
+
