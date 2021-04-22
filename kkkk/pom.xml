@@ -34,7 +34,7 @@
         <hutool.version>4.4.0</hutool.version>
         <selvet.version>3.0.1</selvet.version>
         <redis.version>2.9.0</redis.version>
-        <shiro.version>1.4.0</shiro.version>
+        <shiro.version>1.7.0</shiro.version>
         <hutool.version>4.4.0</hutool.version>
         <project.debug>true</project.debug>
     </properties>
